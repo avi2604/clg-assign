@@ -1,0 +1,15 @@
+<div class="gridblock" *ngIf="vedios && vedios.length">
+  <div *ngFor="let vedio of vedios; let i = index">
+    <mat-card>
+      <img mat-card-image [id]="i" [src]="vedio.image">
+      <mat-card-header>
+        <div mat-card-avatar class="channel-icon" [ngStyle]="{'background-image': 'url(' + vedio.channelIconURL + ')'}"></div>
+        <mat-card-title> {{ vedio.title }} </mat-card-title>
+        <mat-card-subtitle> {{ vedio.channelName }} </mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-actions>
+        <button mat-raised-button color="primary" (click)="watchVedio(vedio)">WATCH</button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+</div>
